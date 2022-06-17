@@ -1,6 +1,6 @@
 ## Perpose
 - Checking the relationship between ActiveJob and Sidekiq.
-
+- Check the behavior of the retry_on method.
 
 ## Versions
 - ruby (2.7.2)
