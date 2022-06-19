@@ -9,7 +9,9 @@ Bundler.require(*Rails.groups)
 module CheckingTheRelationshipBetweenActivejobAndSidekiq
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 6.0
+    config.time_zone = "Tokyo"
+    config.autoload_paths += Dir["#{config.root}/lib/**/", "#{config.root}/app/enums/**/"]
 
     if Rails.env.development?
       config.active_job.queue_adapter = :sidekiq
