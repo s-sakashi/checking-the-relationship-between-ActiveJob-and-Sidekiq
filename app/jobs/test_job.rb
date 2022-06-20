@@ -3,10 +3,10 @@ class TestJob < ApplicationJob
 
   sidekiq_options retry: false
 
-  retry_on StandardError, wait: 1.second
+  retry_on StandardError, wait: 1.second, attempts: 2
 
   def perform
     raise StandardError, "sidekiq_options retry: false"
-    # 5回実行完了後にraise StandardError
+    # 2回実行完了後にraise StandardError
   end
 end
